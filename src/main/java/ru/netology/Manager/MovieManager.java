@@ -32,17 +32,21 @@ public class MovieManager {
     }
 
     public Movie[] getLastAdd() {
-        int moviesLength = movies.length;
-        if (moviesLength < defaultMovieLength) {
-            defaultMovieLength = moviesLength;
-        }
-        Movie[] customFilm = new Movie[defaultMovieLength];
-        for (int i = 0; i < customFilm.length; i++) {
-            int result = moviesLength - i - 1;
-            customFilm[i] = movies[result];
+        int length;
 
+        if (movies.length < defaultMovieLength) {
+            length = movies.length;
+        } else {
+            length = defaultMovieLength;
         }
-        return customFilm;
+        Movie[] result = new Movie[length];
+
+        for (int i = 0; i < result.length; i++) {
+            int index = movies.length - i - 1;
+            result[i] = movies[index];
+        }
+        return result;
+
     }
 }
 

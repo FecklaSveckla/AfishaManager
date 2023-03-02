@@ -14,5 +14,6 @@ public class Movie {
         this.imageUrl = imageUrl;
         this.genre = genre;
     }
+
 }
 
